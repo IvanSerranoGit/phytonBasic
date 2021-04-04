@@ -1,0 +1,19 @@
+Operadores de asignación de Python
+Supongamos que la variable a = 10 y la variable b = 20, entonces:
+
+operador	Descripción	Ejemplo
+=	Asigna valores de los operandos del lado derecho al operando del lado izquierdo	c = a + b asigna el valor de a + b a c
++ = Agregar Y	Agrega el operando derecho al operando izquierdo y asigna el resultado al operando izquierdo	c + = a es equivalente a c = c + a
+– = Restar Y	Resta el operando derecho del operando izquierdo y asigna el resultado al operando izquierdo	c – = a es equivalente a c = c – a
+* = Multiplicar Y	Multiplica el operando derecho con el operando izquierdo y asigna el resultado al operando izquierdo	c * = a es equivalente a c = c * a
+/ = Dividir Y	Divide el operando izquierdo con el operando derecho y asigna el resultado al operando izquierdo	c / = a es equivalente a c = c / ac / = a es equivalente a c = c / a
+% = Módulo Y	Toma módulo usando dos operandos y asigna el resultado al operando izquierdo	c% = a es equivalente a c = c% a
+** = Exponente Y	Realiza el cálculo exponencial (potencia) en los operadores y asigna un valor al operando izquierdo	c ** = a es equivalente a c = c ** a
+// = División del piso	Realiza división de piso en operadores y asigna valor al operando izquierdo	c // = a es equivalente a c = c // a
+Operadores Lógicos de Python
+Hay siguientes operadores lógicos soportados por el lenguaje Python. Supongamos que la variable a = 10 y la variable b = 20, entonces:
+
+operador	Descripción	Ejemplo
+and Lógica Y	Si ambos operandos son verdaderos, entonces la condición se vuelve verdadera.	(a and b) es verdadero.
+or lógico O	Si alguno de los dos operandos es distinto de cero, la condición se cumple.	(a or b) es verdadero.
+not lógico NO	Se utiliza para revertir el estado lógico de su operando.	not (a and b) es falso.

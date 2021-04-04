@@ -1,0 +1,32 @@
+Operador	Descripción	Ejemplo
++	Suma	
+>>> 3 + 2
+5
+-	Resta	
+>>> 4 - 7
+-3
+-	Negación	
+>>> -7
+-7
+*	Multiplicación	
+>>> 2 * 6
+12
+**	Exponente	
+>>> 2 ** 6
+64
+/	División	
+>>> 3.5 / 2
+1.75
+//	División entera	
+>>> 3.5 // 2
+1.0
+%	Módulo	
+>>> 7 % 2
+1
+
+Raiz Cuadrada
+
+1	import math
+2	numero=input(“Ingrese numero: “)
+3	raiz=math.sqrt(numero)
+4	print raiz

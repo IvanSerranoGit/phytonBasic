@@ -1,0 +1,6 @@
+Otros operadores
+operador	Descripción	Ejemplo
+in	Se evalúa como verdadero si encuentra una variable en la secuencia especificada y, de lo contrario, es falso.	x in y,  si x es un miembro de la secuencia y.
+not in	Se evalúa como verdadero si no encuentra una variable en la secuencia especificada y, de lo contrario, es falso.	x not in y,  si x no es un miembro de la secuencia y.
+is	Se evalúa como verdadero si las variables a ambos lados del operador apuntan al mismo objeto y falso de lo contrario.	x is y, si id (x) es igual a id (y).
+is not	Se evalúa como falso si las variables a ambos lados del operador apuntan al mismo objeto y, de lo contrario, son verdaderas.	x is not y, si id (x) no es igual a id (y).

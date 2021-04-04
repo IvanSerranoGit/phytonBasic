@@ -1,0 +1,261 @@
+Qué son los tipos de datos
+En cualquier lenguaje de programación de alto nivel se manejan tipos de datos. Los tipos de datos definen un conjunto de valores que tienen una serie de características y propiedades determinadas.
+
+Pensemos por un momento cuando éramos jóvenes 🙄 y estábamos en el colegio en clase de matemáticas. Seguro que diste alguna clase en la que te enseñaban los distintos conjuntos de números. Los naturales (1, 2, 3, 4, …), los enteros (…, -2, -1, 0, 1, 2, …), los reales (… -1.1, -0.3, 2.1, …), etc. Pues bien, en programación (y por supuesto en Python), cada uno de esos conjuntos sería lo que llamamos tipo de datos.
+
+En Python, todo valor que pueda ser asignado a una variable tiene asociado un tipo de dato. Como ya te he mencionado alguna vez, en Python todo es un objeto. Así que los tipos de datos serían las clases (donde se definen las propiedades y qué se puede hacer con ellas) y las variables serían las instancias (objetos) de los tipos de datos. No te preocupes si no entiendes qué es una clase o un objeto, lo veremos en otro tutorial.
+
+En definitiva, un tipo de dato establece qué valores puede tomar una variable y qué operaciones se pueden realizar sobre la misma.
+
+Tipos de datos básicos de Python
+¿Qué tipos de datos trae consigo Python?
+
+En Python podemos encontrar distintos tipos de datos con diferentes características y clasificaciones. En este tutorial repasaremos los tipos de datos básicos, aunque te introduciré otros tipos de datos que veremos en tutoriales posteriores.
+
+Los tipos de datos básicos de Python son los booleanos, los numéricos (enteros, punto flotante y complejos) y las cadenas de caracteres.
+
+Python también define otros tipos de datos, entre los que se encuentran:
+
+Secuencias: Los tipos list, tuple y range
+Mapas: El tipo dict
+Conjuntos: El tipo set
+Iteradores
+Clases
+Instancias
+Excepciones
+A su vez, los tipos anteriores se pueden agrupar de diferente manera. Por ejemplo: el tipo cadena de caracteres es una secuencia inmutable; las listas, tuplas o diccionarios, entre otros, son contenedores y colecciones, etc. Pero esto no lo veremos aquí.
+
+En fin, no te agobies con tanto tipo ni tanto concepto nuevo. Tómatelo con calma que estás aprendiendo. Comencemos por lo fácil revisando los tipos de datos básicos de Python.
+
+Tipos numéricos
+Python define tres tipos de datos numéricos básicos: enteros, números de punto flotante (simularía el conjunto de los números reales, pero ya veremos que no es así del todo) y los números complejos.
+
+Números enteros
+El tipo de los números enteros es int. Este tipo de dato comprende el conjunto de todos los números enteros, pero como dicho conjunto es infinito, en Python el conjunto está limitado realmente por la capacidad de la memoria disponible. No hay un límite de representación impuesto por el lenguaje.
+
+Pero tranquilidad, que para el 99% de los programas que desarrolles tendrás suficiente con el subconjunto que puedes representar.
+
+Un número de tipo int se crea a partir de un literal que represente un número entero o bien como resultado de una expresión o una llamada a una función.
+
+Ejemplos:
+
+>>> a = -1  # a es de tipo int y su valor es -1
+>>> b = a + 2  # b es de tipo int y su valor es 1
+>>> print(b)
+1
+También podemos representar los números enteros en formato binario, octal o hexadecimal.
+
+Los números octales se crean anteponiendo 0o a una secuencia de dígitos octales (del 0 al 7).
+
+Para crear un número entero en hexadecimal, hay que anteponer 0x a una secuencia de dígitos en hexadecimal (del 0 al 9 y de la A la F).
+
+En cuanto a los números en binario, se antepone 0b a una secuencia de dígitos en binario (0 y 1).
+
+>>> diez = 10
+>>> diez_binario = 0b1010
+>>> diez_octal = 0o12
+>>> diez_hex = 0xa
+>>> print(diez)
+10
+>>> print(diez_binario)
+10
+>>> print(diez_octal)
+10
+>>> print(diez_hex)
+10
+Números de punto flotante
+Bueno, bueno, bueno, entramos en tema caliente y no sé muy bien cómo explicar esto para que sea fácil de entender.
+
+¿Recuerdas que te dije que los números de punto flotante representaban, más o menos, al conjunto de los números reales?
+
+Vamos a hacer un experimento que te va a dejar a cuadros. Abre un terminal y ejecuta el comando python3 para lanzar el intérprete de Python. A continuación introduce la expresión 1.1 + 2.2 y mira cuál es el resultado.
+
+>>> 1.1 + 2.2
+3.3000000000000003
+😳 ¿En serio? 😳 ¿Qué es ese 3 del final?
+
+Representación de los números de punto flotante
+Tenemos que repasar un poco de teoría que voy a tratar de simplificar porque la explicación completa da para un artículo entero.
+
+Al igual que ocurre con los números enteros, los números reales son infinitos y, por tanto, es imposible representar todo el conjunto de números reales con un ordenador.
+
+Para representar el mayor número posible de los números reales con las limitaciones de memoria (tamaños de palabra de 32 y 64 bits), se adaptó la notación científica de representación de números reales al sistema binario (que es el sistema que se utiliza en programación para representar los datos e instrucciones).
+
+En esta notación científica, los números se representan así:
+
+Número	Notación científica
+101,1	1,011 * 102
+0,032	3,2 * 10-2
+Vaya tela, ¿no? Pero es una muy buena solución que ha llegado hasta nuestros días.
+
+El caso es que la suma de la representación en punto flotante en binario del número 1,1 y de la representación en punto flotante en binario del número 2,2, dan como resultado 3,3000000000000003
+
+Pero hay más casos, como por ejemplo la representación del número 1/3. En algún momento, el ordenador tiene que truncar el número periódico resultante.
+
+La explicación final es que los números de punto flotante se representan en el hardware del ordenador como fracciones de base 2 (binarias). Y el problema está en que la mayoría de las fracciones decimales no se pueden representar de forma exacta como fracciones binarias porque tienen infinitos números decimales. Una consecuencia es que, en general, los números decimales de punto flotante que usas en tus aplicaciones son una aproximación de los números binarios de punto flotante realmente almacenados en la máquina.
+
+Números de Punto flotante en Python
+Pues una vez vista esta simplificada introducción a los números de punto flotante, te diré que este tipo de datos en Python es float.
+
+Puedes usar el tipo float sin problemas para representar cualquier número real (siempre teniendo en cuenta que es una aproximación lo más precisa posible). Por tanto para longitudes, pesos, frecuencias, …, en los que prácticamente es lo mismo 3,3 que 3,3000000000000003 el tipo float es el más apropiado.
+
+Cuando un número float vaya a ser usado por una persona, en lugar de por el ordenador, puedes darle formato al número de la siguiente manera:
+
+>>> real = 1.1 + 2.2  # real es un float
+>>> print(real)
+3.3000000000000003  # Representación aproximada de 3.3
+>>> print(f'{real:.2f}')
+3.30  # real mostrando únicamente 2 cifras decimales
+Al igual que los números enteros, un float se crea a partir de un literal, o bien como resultado de una expresión o una función.
+
+>>> un_real = 1.1  # El literal debe incluir el carácter .
+>>> otro_real = 1/2  # El resultado de 1/2 es un float
+>>> not_cient = 1.23E3  # float con notación científica (1230.0)
+Y para terminar esta sección, te adelanto que, si por cualquier motivo sí que necesitas una mayor precisión a la hora de trabajar con los números reales, Python tiene otros tipos de datos, como Decimal.
+
+El tipo Decimal es ideal a la hora de trabajar, por ejemplo, con dinero o tipos de interés. Este tipo de dato trunca la parte decimal del número para ser más preciso, pero no es el objetivo de este tutorial hablar sobre el tipo de dato Decimal.
+
+Números complejos
+El último tipo de dato numérico básico que tiene Python es el de los números complejos, complex.
+
+Los números complejos tienen una parte real y otra imaginaria y cada una de ellas se representa como un float.
+
+Para crear un número complejo, se sigue la siguiente estructura <parte_real>+<parte_imaginaria>j. Y se puede acceder a la parte real e imaginaria a través de los atributos real e imag:
+
+>>> complejo = 1+2j
+>>> complejo.real
+1.0
+>>> complejo.imag
+2.0
+Aritmética de los tipos numéricos
+Con todos los tipos numéricos se pueden aplicar las operaciones de la aritmética: suma, resta, producto, división, …
+
+En Python está permitido realizar una operación aritmética con números de distinto tipo. En este caso, el tipo numérico «más pequeño» se convierte al del tipo «más grande», de manera que el tipo del resultado siempre es el del tipo mayor. Entendemos que el tipo int es menor que el tipo float que a su vez es menor que el tipo complex.
+
+Por tanto, es posible, por ejemplo, sumar un int y un float:
+
+>>> 1 + 2.0
+3.0
+>>> 2+3j + 5.7
+(7.7+3j)
+Tipo booleano
+En Python la clase que representa los valores booleanos es bool. Esta clase solo se puede instanciar con dos valores/objetos: True para representar verdadero y False para representar falso.
+
+Una particularidad del lenguaje es que cualquier objeto puede ser usado en un contexto donde se requiera comprobar si algo es verdadero o falso. Por tanto, cualquier objeto se puede usar en la condición de un if o un while (son estructuras de control que veremos en tutoriales posteriores) o como operando de una operación booleana.
+
+Por defecto, cualquier objeto es considerado como verdadero con dos excepciones:
+
+Que implemente el método __bool__() y este devuelva False.
+Que impleménte el método __len__() y este devuelva 0.
+Además, los siguientes objetos/instancias también son consideradas falsas:
+
+None
+False
+El valor cero de cualquier tipo numérico: 0, 0.0, 0j, …
+Secuencias y colecciones vacías (veremos estos tipos en otros tutoriales): '', (), [], {}, set(), range(0)
+Tipo cadena de caracteres
+Una vez que hemos acabado con los números, es el turno de las letras 😜
+
+Otro tipo básico de Python, e imprescindible, son las secuencias o cadenas de caracteres. Este tipo es conocido como string aunque su clase verdadera es str.
+
+Formalmente, un string es una secuencia inmutable de caracteres en formato Unicode.
+
+Para crear un string, simplemente tienes que encerrar entre comillas simples '' o dobles "" una secuencia de caracteres.
+
+Se puede usar indistintamente comillas simples o dobles, con una particularidad. Si en la cadena de caracteres se necesita usar una comilla simple, tienes dos opciones: usar comillas dobles para encerrar el string, o bien, usar comillas simples pero anteponer el carácter \ a la comilla simple del interior de la cadena. El caso contrario es similar.
+
+Veamos todo esto con un ejemplo:
+
+>>> hola = 'Hola "Pythonista"'
+>>> hola_2 = 'Hola \'Pythonista\''
+>>> hola_3 = "Hola 'Pythonista'"
+>>> print(hola)
+Hola "Pythonista"
+>>> print(hola_2)
+Hola 'Pythonista'
+>>> print(hola_3)
+Hola 'Pythonista'
+A diferencia de otros lenguajes, en Python no existe el tipo «carácter». No obstante, se puede simular con un string de un solo carácter:
+
+>>> caracter_a = 'a'
+>>> print(caracter_a)
+a
+Revisa este tutorial si quieres conocer más sobre la clase str de Python.
+
+Otros tipos
+Hasta aquí hemos repasado los tipos de datos básicos de Python, sin embargo, el lenguaje ofrece muchos tipos más. Te hago aquí un avance de los más importantes, aunque los veremos en detalle en otros tutoriales.
+
+Además de los tipos básicos, otros tipos fundamentales de Python son las secuencias (list y tuple), los conjuntos (set) y los mapas (dict).
+
+Todos ellos son tipos compuestos y se utilizan para agrupar juntos varios valores.
+
+Las listas son secuencias mutables de valores.
+Las tuplas son secuencias inmutables de valores.
+Los conjuntos se utilizan para representar conjuntos únicos de elementos, es decir, en un conjunto no pueden existir dos objetos iguales.
+Los diccionarios son tipos especiales de contenedores en los que se puede acceder a sus elementos a partir de una clave única.
+>>> lista = [1, 2, 3, 8, 9]
+>>> tupla = (1, 4, 8, 0, 5)
+>>> conjunto = set([1, 3, 1, 4])
+>>> diccionario = {'a': 1, 'b': 3, 'z': 8}
+>>> print(lista)
+[1, 2, 3, 8, 9]
+>>> print(tupla)
+(1, 4, 8, 0, 5)
+>>> print(conjunto)
+{1, 3, 4}
+>>> print(diccionario)
+{'a': 1, 'b': 3, 'z': 8}
+Conocer el tipo de una variable
+Ahora te voy a presentar dos funciones para que puedas jugar con todo lo que hemos visto en este tutorial. Son type() e isinstance():
+
+type() recibe como parámetro un objeto y te devuelve el tipo del mismo.
+isinstance() recibe dos parámetros: un objeto y un tipo. Devuelve True si el objeto es del tipo que se pasa como parámetro y False en caso contrario.
+>>> type(3)
+<class 'int'>
+>>> type(2.78)
+<class 'float'>
+>>> type('Hola')
+<class 'str'>
+>>> isinstance(3, float)
+False
+>>> isinstance(3, int)
+True
+>>> isinstance(3, bool)
+False
+>>> isinstance(False, bool)
+True
+Conversión de tipos
+Lo último que veremos en este tutorial sobre tipos de datos es la conversión de tipos.
+
+¿Esto qué significa?
+
+Imagina que tienes una variable edad de tipo string cuyo valor es '25'. Se podría decir que edad, aunque realmente es una cadena de caracteres, contiene un número. Sin embargo, si intentas sumar 10 a edad, el intérprete te dará un error porque edad es de tipo str y 10 un tipo numérico.
+
+>>> edad = '25'
+>>> edad = edad + 10
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str
+¿Cómo puedo tratar la variable edad como un número? Convirtiéndola a un tipo numérico, por ejemplo, al tipo int.
+
+Para ello, Python ofrece las siguientes funciones:
+
+str(): Devuelve la representación en cadena de caracteres del objeto que se pasa como parámetro.
+int(): Devuelve un int a partir de un número o secuencia de caracteres.
+float(): Devuelve un float a partir de un número o secuencia de caracteres.
+complex(): Devuelve un complex a partir de un número o secuencia de caracteres.
+Si a las funciones anteriores se les pasa como parámetro un valor inválido, el intérprete mostrará un error.
+
+>>> edad = int(edad) + 10  # Convierte edad a int
+>>> edad  #  edad es un int
+35
+>>> edad = str(edad)  # Convierte edad a str
+>>> edad  # edad es un str (se muestran las '')
+'35'
+>>> float('18.66')  # Convierte un str a float
+18.66
+>>> float('hola')  # Convierte un str a float (pero no es válido)
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+ValueError: could not convert string to float: 'hola'
+Bueno, espero que hayas disfrutado este tutorial tanto como yo lo he hecho escribiéndolo. No te pierdas el siguiente ya que es la continuación de este. En él veremos los operadores de Python para llevar a cabo operaciones sobre los distintos tipos de datos.

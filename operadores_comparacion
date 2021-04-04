@@ -1,0 +1,11 @@
+Operadores de comparación de Python
+Estos operadores comparan los valores a ambos lados de ellos y deciden la relación entre ellos. También se les llama operadores relacionales.  Supongamos que la variable a = 10 y la variable b = 20, entonces:
+
+operador	Descripción	Ejemplo
+==	Si los valores de dos operandos son iguales, entonces la condición se vuelve verdadera.	(a == b) no es cierto.
+! =	Si los valores de dos operandos no son iguales, entonces la condición se vuelve verdadera.	(a != b) es verdadero.
+< >	Si los valores de dos operandos no son iguales, entonces la condición se vuelve verdadera.	(a < > b) es verdadero. Esto es similar al operador! =.
+>	Si el valor del operando izquierdo es mayor que el valor del operando derecho, la condición se vuelve verdadera.	(a > b) no es cierto.
+<	Si el valor del operando izquierdo es menor que el valor del operando derecho, la condición se vuelve verdadera.	(a < b) es verdadero.
+> =	Si el valor del operando izquierdo es mayor o igual que el valor del operando derecho, la condición se vuelve verdadera.	(a > = b) no es cierto.
+< =	Si el valor del operando izquierdo es menor o igual al valor del operando derecho, la condición se vuelve verdadera.	(a < = b) es verdadero.
