@@ -1,0 +1,93 @@
+
+La vida se basa en tomar las decisiones correctas, y nuestros programas no están exentos de ello. En cierto modo, el fin de todo esto es programar algo para algunos aspectos de nuestras vidas. Por lo tanto, es lógico que tarde o temprano tenemos que hacer frente al tema de la toma de decisiones en nuestros programas.
+
+
+Aquí es donde las sentencias condicionales entran en juego. Nos ayudan a controlar esa toma de decisiones utilizando la lógica en nuestros programas. Las sentencias condicionales en Python son: if, elif y else.
+
+Pero, ¿qué hace una sentencia condicional? Simplemente comprueba si una declaración (test) es verdadera o falsa, y en base a eso se lleva a cabo una acción.
+Programas ramificados
+
+A diferencia de los programas lineales, donde las sentencias se ejecutan en el orden en el que aparecen, los programas ramificados nos permiten navegar entre las sentencias sin importar el orden, basándose en decisiones. Las sentencias condicionales que hemos mencionado anteriormente entran dentro de este tipo de programación, a condición de que si una sentencia condicional ha sido ejecutada, la ejecución del programa continúa en la siguiente línea de código condicional.
+Estructura de las sentencias condicionales
+
+En esta sección voy a describir las diferentes partes que componen una sentencia condicional. Una sentencia condicional consiste básicamente en las siguientes partes principales:
+
+    una prueba que evalúa a verdadero o falso
+    un bloque de código que se ejecuta si la prueba es verdadero
+    un bloque opcional de código si la prueba es falsa
+
+Una sentencia condicional en Python, por lo tanto, luciría de la siguiente manera:
+
+if test:
+    code
+else:
+    code
+
+Donde test es una expresión booleana, es decir, una expresión que se evalúa como verdadera o falsa.
+
+En otras palabras, las sentencias condicionales nos permiten verificar la veracidad de ciertas declaraciones. Veamos un ejemplo sencillo con la estructura anterior:
+
+x = 0
+if x == 3:
+    print 'x is equal to 3'
+else:
+    print 'x is NOT equal to 3'
+     
+print 'That's it!'
+
+¿Cuál es la salida de este fragmento de código? Creo que habrás podido deducirlo tú solito.
+
+En este punto, creo que debo mencionar rápidamente el tema de las indentaciones (espacios), que utiliza Python en lugar de las llaves que utilizan otros lenguajes como C. En el script anterior, ¿qué sucedería si escribiésemos la última instrucción de print en el mismo nivel que el print anterior (el del bloque else)? En otras palabras, si lo escribiésemos de la siguiente manera:
+
+else:
+    print 'x is not equal to 5'
+    print 'That's it!'
+
+En ese caso, print 'That's it!' será parte del bloque de código else.
+
+Esto es sólo un ejemplo rápido sobre las indentaciones, que son un componente muy importante en la sintaxis de Python. Al programar en Python, es normal que errores como este aparezcan de vez en cuando, sobre todo si vienes de programar de otros lenguajes distintos:
+
+IndentationError: expected an indented block
+
+Sentencias condiconales anidadas
+
+Se dice que una sentencia condicional es anidada si el bloque de código verdadero o el bloque de código falso (por ejemplo, else) contiene otra sentencia condicional. Veamos un ejemplo de ello:
+
+if course1 == 'Computer Science I':
+    if course2 == 'Computer Science II':
+        print 'student can take the Data Structures course'
+else:
+    print 'student lacks the necessary requirements to take the Data Structures course'
+
+Aquí tenemos una sentencia condicional anidada. La primera instrucción if contiene otra sentencia if dentro. De nuevo, fíjate en cómo se indenta el código. Esto es muy importante cuando se programa en Python.
+Expresiones booleanas compuestas
+
+Anteriormente he mencionado que test en la estructura de la sentencia condicional era una expresión booleana. A veces es posible que tengas más de una expresión booleana en el misma test. A esto es a lo que llamamos expresiones booleanas compuestas.
+
+Tomemos como ejemplo el encontrar el número más pequeño de entre tres números. Observa que el primera test es una expresión booleana compuesta.
+
+if a < b and a < c:
+    print 'x is the smallest number'
+elif b < c:
+    print 'b is the smallest number'
+else:
+    print 'c is the smallest number'
+
+En este ejemplo utilizamos la tercera sentencia condicional por primera vez en este tutorial, es decir elif, que se refiere a else if.
+
+También hemos utilizado una operación booleana llamada and, lo que significa que todos los estados tienen que ser ciertos para que la siguiente instrucción se ejecute. Las operaciones booleanas de Python se pueden resumir en esto:
+
+    Or:  la siguiente instrucción se ejecuta si cualquier expresión es verdadera
+    And: todas las expresiones tienen que ser ciertas para que la siguiente instrucción se ejecute
+    Not: la expresión es falsa si se evalúa como verdadera, y viceversa
+
+Si tuvieras una sentencia (test) que mezcle todas esas operaciones, el orden de prioridad es el siguiente: or se ejecuta primero, después and, y a continuación, not.
+
+Tomemos otro ejemplo de prueba para ver cómo funcionan las operaciones booleanas con las listas:
+
+list = [1,2,3,4,5]
+x = 13
+if x not in list:
+    print 'x is not in the list'
+
+¿Ves la forma en que hemos utilizado not en este ejemplo? Como sabéis, para que el bloque de código del if se ejecute, la declaración (expresión lógica) debe ser evaluada como true. La sentencia se evalúa inicialmente en false en nuestro caso, ya que el 13 no pertenece a la lista. Si ejecutas el programa, sin embargo, te darás cuenta de que la sentencia print se está ejecutando. ¿Cómo es posible? Esto pasa porque utilizamos el operador not, que invierte el valor original de la evaluación. En nuestro caso, invierte el falso a verdadero. 

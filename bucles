@@ -1,0 +1,56 @@
+Bucles
+Los bucles son otra herramienta para alterar el flujo normal de un programa. Nos permiten repetir una porción de código tantas veces como queramos. Python incluye únicamente dos tipos de bucle: while y for. Empecemos por el primero, que es más sencillo.
+
+Bucle «while»
+La palabra reservada while ejecuta una porción de código una y otra vez hasta que la condición especificada sea falsa; o, dicho de otro modo, ejecuta una porción de código mientras que la condición sea verdadera.
+
+a = 1
+while a < 10:
+    print("¡Hola, mundo!")
+Si ejecutamos este código, veremos que el programa imprime infintamente el mensaje en pantalla. Esto ocurre por cuanto la condición a < 10 es inexorablemente siempre verdadera (uno es menor que diez). Ahora bien, consideremos este otro ejemplo.
+
+a = 1
+while a < 10:
+    print("¡Hola, mundo!")
+    a = a + 1
+Ahora el resultado es distinto: el mensaje se imprime nueve veces. Analicemos por qué pasa esto. Cuando el intérprete tiene que ejecutar el bucle, evalúa la condición a < 10, que en un primer momento equivale a 1 < 10, que es verdadero. Entonces, ejecuta el bloque de código dentro del bucle: imprime el mensaje en pantalla y luego le suma 1 a la variable a. Cuando el bloque de código finaliza, se vuelve a evaluar la condición, que ahora resulta ser 2 < 10, aún verdadero. Luego se ejecuta nuevamente el bloque de código y el proceso se repite hasta llegar a la condición 10 < 10, que es falsa y por ende el bucle termina.
+
+Podemos ver con más detalle el proceso imprimiendo la variable a.
+
+a = 1
+while a < 10:
+    print("¡Hola, mundo!")
+    print(a)
+    a += 1
+Además, cambié la última línea por a += 1, que es simplemente un atajo para a = a + 1.
+
+Ahora bien, combinando lo que hemos aprendido hasta el momento y el conocimiento que obtuvimos sobre colecciones en la sección anterior, podemos crear un bucle while que imprima todos los elementos dentro de una lista.
+
+lenguajes = ["Python", "C", "C++", "Java"]
+i = 0
+
+while i < len(lenguajes):
+    print(lenguajes[i])
+    i += 1
+¡Excelente! No importa cuántos elementos agregemos a lenguajes, nuestro bucle estará preparado para imprimir todos ellos.
+
+Bucle «for»
+Si bien un bucle while es perfectamente capaz de, como vimos, imprimir los elementos de una colección, resulta que un bucle for es una herramienta más pertinente para este tipo de situaciones.
+
+lenguajes = ["Python", "C", "C++", "Java"]
+
+for lenguaje in lenguajes:
+    print(lenguaje)
+¡Genial! Lo que ha ocurrido aquí es lo siguiente: el bucle for ejecuta el bloque de código indentado (en este caso la llamada a print()) tantas veces como elementos haya en la colección indicada a la derecha del operador in. Pero, cada vez que ese código es ejecutado, la variable lenguaje tendrá un valor diferente: en la primera ejecución será igual a "Python"; en la segunda, a "C"; y así hasta alcanzar el final de la lista.
+
+Este tipo de bucle for es bastante diferente al que prima en otros lenguajes de programación. No obstante, ese comportamiento puede conseguirse fácilmente en Python empleando otra de sus funciones incorporadas. Por ejemplo, si queremos imprimir números del 1 al 10:
+
+for i in range(1, 11):
+    print(i)
+¿Qué tipos de dato pueden ser recorridos con un bucle for? Bien, de los que hemos visto, las colecciones (listas, tuplas y diccionarios) y las cadenas (entendidas como una colección de caracteres). No obstante, hay muchos otros objetos que no se incluyen en ninguna de estas categorías y no obstante ello pueden ser recorridos. Se dice que son objetos iterables. Este es el caso del objeto retornado por la función range().
+
+Históricamente, range() retornaba una lista, de modo que range(1, 4) == [1, 2, 3]. En versiones actuales de Python, su funcionamiento es un tanto más complejo, por cuanto genera los números del rango especificado a medida que son utilizados, para optimizar el rendimiento del código. No te preocupes, no es una cuestión relevante en este momento. En última instancia, puedes convertir cualquier objeto iterable a una lista vía list().
+
+>>> list(range(1, 11))
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+Perfecto. Ya hemos logrado un conocimiento básico sobre estas cuestiones. Volveremos más adelante sobre alguna que otra funcionalidad relacionada con el tema. Me interesa que hablemos ahora de a las funciones.
