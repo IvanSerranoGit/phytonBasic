@@ -4,10 +4,10 @@ def conversor(tipo_pesos, valor_dolar):
     dolares = pesos / valor_dolar
     dolares = round(dolares, 2)
     dolares = str(dolares)
-    print(f"tus {pesos} equivalen " + dolares + " dolares")
+    print(f"tus $ {pesos} equivalen " + dolares + " dolares")
 
 menu = """ 
-Bienvenido al conversor de monedas 
+Bienvenido al conversor de monedas 🤑
 
 1 - Pesos Mexicanos
 2 - Pesos Colombianos
@@ -23,5 +23,7 @@ elif opcion == 2:
     conversor("Colombianos", 3661.70)
 elif opcion == 3:
     conversor("Argentinos", 91.76)
+else:
+    print('elige una opcion correcta')
 
- 
+

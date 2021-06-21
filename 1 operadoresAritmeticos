@@ -25,6 +25,7 @@ Operador	Descripción	Ejemplo
 1
 
 Raiz Cuadrada
+9**0.5
 
 1	import math
 2	numero=input(“Ingrese numero: “)

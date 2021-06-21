@@ -11,7 +11,6 @@ def es_primo(numero):
     else:
         return False
 
-
 def run():
     numero = int(input('Escribe un numero '))
     if es_primo(numero):
