@@ -4,7 +4,7 @@ def conversor(tipo_pesos, valor_dolar):
     dolares = pesos / valor_dolar
     dolares = round(dolares, 2)
     dolares = str(dolares)
-    print("Tienes $" + dolares + " dolares")
+    print(f"tus {pesos} equivalen " + dolares + " dolares")
 
 menu = """ 
 Bienvenido al conversor de monedas 
